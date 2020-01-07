@@ -1,14 +1,12 @@
 use std::time::{SystemTime, SystemTimeError};
 
-use json::JsonValue;
-
 /// # PubNub Message
 ///
 /// This is the message structure yielded by [`Subscription`].
 ///
 /// [`Subscription`]: crate::Subscription
 #[derive(Debug, Clone)]
-pub struct Message {
+pub struct Message<JsonValue> {
     /// Enum Type of Message.
     pub message_type: Type,
     /// Wildcard channel or channel group.
@@ -87,15 +85,15 @@ impl Type {
     }
 }
 
-impl Default for Message {
+impl<JsonValue: Default> Default for Message<JsonValue> {
     #[must_use]
     fn default() -> Self {
         Self {
             message_type: Type::Unknown(0),
             route: Option::default(),
             channel: String::default(),
-            json: JsonValue::Null,
-            metadata: JsonValue::Null,
+            json: JsonValue::default(),
+            metadata: JsonValue::default(),
             timetoken: Timetoken::default(),
             client: Option::default(),
             subscribe_key: String::default(),

@@ -38,7 +38,6 @@ pub use crate::pubnub::{PubNub, PubNubBuilder};
 pub use crate::runtime::Runtime;
 pub use crate::subscription::Subscription;
 pub use crate::transport::Transport;
-pub use json;
 
 pub use async_trait::async_trait;
 
