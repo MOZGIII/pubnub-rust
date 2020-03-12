@@ -11,5 +11,5 @@
     missing_copy_implementations
 )]
 
-#[cfg(feature = "encoded-channels-list")]
-pub mod encoded_channels_list;
+#[cfg(feature = "url-encoded-list")]
+pub mod url_encoded_list;
