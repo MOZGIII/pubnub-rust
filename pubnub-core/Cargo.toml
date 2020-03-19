@@ -21,6 +21,7 @@ mockall = { version = "0.6", optional = true }
 percent-encoding = "2.1"
 thiserror = "1.0"
 uuid = { version = "0.8", features = ["v4"] }
+dashmap = "3.7"
 
 [dev-dependencies]
 byteorder = "1.3"
